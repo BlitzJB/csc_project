@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="../static/beds.css">
+  <link rel="stylesheet" href="../static/login.css">
+  <style>
+    .login__toplabel {
+      font-size: 50px;
+    }
+    form {
+      display: flex;
+      flex-direction: column
+    }
+
+    #dist_search {
+      margin-left: 0; margin-top: 10px
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      border: 3px solid lightblue;
+      padding: 20px;
+      margin-left: auto; margin-right: auto;
+      margin-bottom:30px
+    }
+
+    .data {
+      font-size: 35px;
+    }
+
+  </style>
+</head>
+<body style="color: white; font-family: sans-serif">
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">Home</a></li>
+  </ul>
+  <div class="profile">
+    <img src="../static/{{ profile_picture[0][1] }}" height="100" width="100" class="pfp">
+    <span class="data">{{ pdata[0] }}</span>
+    <span class="data">{{ pdata[1] }}</span>
+    {% if pdata[3] == 'TRUE' %}
+      <span class="admin">Admin</span>
+    {% endif %}
+  </div>
+  <div class="search_container">
+    <div class="search_container_inner">
+      <form id="dist_select_form" action="/profile" method="POST">
+        <label for="dist_select" class="login__toplabel">Select Profile Picture</label>
+        <select id="dist_select" name="picture">
+          <option value="cat.png">Cat</option>
+          <option value="dog.png">Dog</option>
+          <option value="bird.png">Bird</option>
+        </select>
+        <button type="submit" id="dist_search" style="cursor: pointer;">Change</button>
+      </form>
+      <form action="/logout" method="POST">
+        <button type="submit" class="cancel__btn">Logout</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+body {
+  margin: 0px;
+  height: 100vh; width: 100vw;
+  position: relative;
+  background-image: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+  overflow-x: hidden
+}
+
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('Sansation_Light.ttf');
+}
+
+:root {
+  --text: rgb(235, 235, 235);
+  --gradient-1: rgb(10, 0, 54);
+  --gradient-2: rgb(32, 0, 128);
+  --btn: rgba(253, 253, 253, 0.6);
+  --btn-background: rgba(1, 1, 1, 0.23)
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__container {
+  margin-top: -5%;
+  background-image: linear-gradient(to left, rgb(17, 0, 92), rgb(28, 0, 114));
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+  box-shadow: 0 0 15px rgba(25, 25, 25, .45);
+  position: relative;
+  border: 1px solid var(--btn);
+  padding: 25px;
+}
+
+.login__toplabel {
+  font-size: 1.5rem;
+  color: var(--text);
+  font-family: 'Sansation Light';
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__label {
+  margin-top: 25px;
+  font-size: 1.25rem;
+  color: var(--text);
+  font-family: 'Sansation Light';
+}
+
+.login__field {
+  color: var(--text);
+  font-size: 1rem;
+  padding: 5px; 
+  padding-left: 15px; padding-right: 15px;
+  border-radius: 100vh;
+  width: 300px;
+  height: 30px;
+  background-color: transparent; border: none;
+  border: 1px solid var(--btn);
+  margin-top: 10px;
+}
+
+.login__field::placeholder {
+  color: rgba(253, 253, 253, 0.6);
+}
+
+.login__field:focus {
+  outline: 0px;
+}
+
+.login__btn {
+  margin-top: 15px;
+  font-size: 1.05rem;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;  border: none;
+  border: 1px solid rgba(47, 255, 99, .65);
+  color: rgba(47, 255, 99, .65);
+  transition: 200ms;
+}
+
+.login__btn:hover {
+  cursor: pointer;
+  border: 1px solid rgba(47, 255, 99, .9);
+  color: rgba(47, 255, 99, .9);
+}
+
+.login__btn:disabled, .login__btn:focus {
+  cursor: context-menu;
+  border: 1px solid var(--btn);
+  color: var(--btn);
+}
+
+.login__field:focus {
+  outline: 0px;
+}
+
+.cancel__btn {
+  margin-top: 15px; 
+  font-size: 1.05rem;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;  border: none;
+  border: 1px solid rgba(255, 0, 0, 0.65);
+  color: rgba(255, 0, 0, 0.65);
+  transition: 200ms;
+}
+
+.cancel__btn:hover {
+  cursor: pointer;
+  border: 1px solid rgb(253, 59, 59);
+  color: rgb(253, 59, 59);
+}
+
+.login__forgotpass {
+  margin-left: 20px;
+  font-family: "sansation light";
+  text-decoration: underline;
+  color:  var(--btn);
+  transition: 100ms;
+}
+
+.login__forgotpass:hover {
+  color: var(--text);
+}
+
+.validation_message {
+  font-family: 'sansation light';
+  padding: 10px;
+  color: rgb(253, 59, 59);
+}
+
+.otp__container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 25px;
+  background-image: linear-gradient(to left, rgb(17, 0, 92), rgb(28, 0, 114));
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+  box-shadow: 0 0 15px rgba(25, 25, 25, .45);
+  border: 1px solid var(--btn);
+}
+
+.otp__desc {
+  font-family: 'sansation light';
+  color: var(--text);
+}
+
+.otp__label {
+  font-size: 1.5rem;
+  font-family: 'sansation light';
+  color: var(--text);
+}
+
+.otp__desc {
+  margin-top: 15px; margin-bottom: 15px;
+}

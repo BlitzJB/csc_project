@@ -1,0 +1,265 @@
+* {
+  padding: 0px; margin: 0px;
+}
+
+:root {
+  --light-blue: rgb(73, 234, 255);
+  --gradient-1: rgb(6, 0, 32);
+  --gradient-2: rgb(24, 0, 95);
+  --text: rgba(253, 253, 253, 1);
+  --btn: rgba(253, 253, 253, 0.6);
+  --btn-background: rgba(1, 1, 1, 0.23)
+}
+
+body {
+  background-image: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('Sansation_Light.ttf');
+}
+
+@media screen and (max-width: 1000px){
+  .main_text {
+    color: white;
+    grid-row: 4/5;
+    grid-column: 2/12;
+    font-family: 'Sansation Light';
+    text-align: center;
+    letter-spacing: 10px;
+    word-spacing: 10px;
+    font-size: 50px;
+    font-weight: 500;
+    transition: 1000ms;
+  }
+  
+  .main_text:hover {
+    color: rgb(173, 222, 255);
+    letter-spacing: 15px;
+    word-spacing: 10px;
+    font-size: 45px;
+    font-weight: 500;
+    cursor: context-menu;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(30px, auto)
+}
+
+/* .grid > div:nth-child(odd) {
+  background-color: rgba(255, 0, 0, 0.178);
+}
+
+.grid > div:nth-child(even) {
+  background-color: rgba(0, 255, 255, 0.178);
+} */
+
+.nav {
+  grid-row: 2/3;
+  grid-column: 5/9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav_item > a {
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: 'Sansation Light';
+  border-bottom: 1px solid white;
+  transition: 300ms;
+}
+
+.active_link > a {
+  border-bottom: 1px solid rgb(73, 234, 255);
+}
+
+.nav_item > a:hover {
+  color: rgb(73, 234, 255);
+  cursor: pointer;
+}
+
+.main_text {
+  color: white;
+  grid-row: 4/5;
+  grid-column: 2/12;
+  font-family: 'Sansation Light';
+  text-align: center;
+  letter-spacing: 10px;
+  word-spacing: 10px;
+  font-size: 70px;
+  font-weight: 500;
+  transition: 1000ms;
+}
+
+.main_text:hover {
+  color: rgb(173, 222, 255);
+  letter-spacing: 15px;
+  word-spacing: 10px;
+  font-size: 65px;
+  font-weight: 500;
+  cursor: context-menu;
+}
+
+.btn_container {
+  grid-row: 7/8;
+  grid-column: 1/13;
+  --n-grid-elements: 4;
+  --grid-gap: 3vw;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: repeat(var(--n-grid-elements), 1fr);
+  grid-gap: var(--grid-gap);
+  height: 100px;
+  width: calc(900px + calc(var(--grid-gap) * calc(var(--n-grid-elements) - 1)));
+}
+
+.btn {
+  height: 100%;
+  width: 100%;
+}
+
+.btn a {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.btn button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  fill: none;
+  background-color: transparent;
+  border: 1px solid var(--btn);
+  border-radius: 5px;
+  transition: 200ms;
+}
+
+.btn button:hover {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  fill: none;
+  background-color: var(--btn-background);
+  border: 0.2em solid var(--light-blue);
+}
+
+.btn_icon {
+  height: 30%;
+  width: 30%;
+  margin-bottom: auto;
+  margin-right: 5%;
+  fill: var(--btn);
+  transition: 200ms;
+}
+
+#bed {
+  margin-top:8%;
+}
+
+#vaccine {
+  margin-top: 10%;
+}
+
+#human {
+  margin-top: 9%;
+}
+
+button:hover > .btn_icon {
+  /* fill: var(--light-blue); */
+  fill: var(--text);
+  padding-left: 5%;
+}
+
+.btn_text {
+  font-size: 1.85em;
+  font-family: 'Sansation Light';
+  margin-right: auto;
+  text-align: left;
+  color: var(--text);
+  transition: 200ms;
+}
+
+@media (max-width: 900px) {
+  .main_text {
+    font-size: 40px;
+  }
+
+  .main_text:hover {
+    font-size: 40px;
+  }
+
+  .btn_container {
+    display: flex;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .btn_container > .btn {
+    width: 300px
+  }
+
+  .user { 
+    position: static;
+    background-image: none;
+    margin-top: 10px;margin-bottom: 10px;
+    padding: 0;
+  }
+  .nav {
+    grid-row: 1/2;
+  }
+
+  body {
+    display: flex; flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .user {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+.user {
+  display: flex; flex-direction: row; align-items: center; justify-content: center;
+  font-family: 'sansation light';
+  color: white;
+  padding: 10px; padding-right: 20px; width: fit-content;
+  border-radius: 100vh;  
+  background-image: linear-gradient(to left, rgb(17, 0, 92), rgb(28, 0, 114));
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+}
+
+#user_pfp > img {
+  height: 50px; 
+  width: 50px;
+  padding-left: 10px; padding-right: 10px;
+  clip-path: circle(25px at center);
+}
+
+.bg__video video {
+  position: absolute;
+  z-index: -100;
+  left: 0; top: 0; 
+  height: 100%; width: 100vw;
+  object-fit: cover;
+  opacity: 0.1;
+}

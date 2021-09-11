@@ -1,0 +1,112 @@
+:root {
+  --gradient-1: rgb(10, 0, 54);
+  --gradient-2: rgb(27, 0, 107);
+  --grad-1: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  --grad-2: linear-gradient(to right, var(--gradient-2), var(--gradient-1));
+  --grad-3: linear-gradient(to right, rgb(27, 0, 107), rgb(15, 0, 80));
+  --grad-4: linear-gradient(to right, rgb(15, 0, 80), rgb(27, 0, 107));
+  --light-gray: rgba(253, 253, 253, 0.6);
+  --text: rgb(219, 219, 219);
+  --light-blue: rgb(181, 181, 255);
+}
+
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('Sansation_Light.ttf');
+}
+
+body {
+  position: relative;
+  min-height: 98vh;
+  overflow-x: hidden;
+  font-family: 'sansation light';
+  background-image: var(--grad-4);
+  border-image-repeat: no repeat;
+  border-image-slice: 1;
+  color: white;
+}
+
+.nav {
+  list-style: none;
+  padding:0;margin: 0;
+  display: flex; flex-direction: row
+}
+
+.nav__links:nth-child(1) {
+  font-weight: 600;
+  font-size: 30px;
+  margin-right: 60px;
+  margin-bottom: 0px;
+}
+
+.nav__links {
+  margin-top: auto;
+  margin-right: 20px;
+  margin-bottom: 3px;
+}
+
+.nav__links a {
+  text-decoration: none;
+  color: rgb(181, 181, 255);
+  transition: all 200ms;
+}
+
+.nav__links a:hover {
+  color: white;
+}
+
+.docs_container {
+  padding: 100px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.doc {
+  border: 2px solid var(--light-blue);
+  padding: 20px;
+}
+
+.doc__name {
+  font-size: 28px;
+}
+
+.doc__qualif {
+  font-size: 24px;
+}
+
+.doc__timings {
+  font-size:22px;
+}
+
+.doc button {
+  padding: 15px 20px;
+  font-size: 20px;
+  color: var(--light-blue);
+  background-color: transparent;
+  border: 1px solid var(--light-blue);
+  transition: all 200ms;
+}
+
+.doc button:hover {
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.pays_container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px
+}
+
+.doc__input {
+  margin: 15px;
+  padding: 5px;
+  font-size: 22px
+}
+
+.doc__input:focus {
+  outline: none
+}

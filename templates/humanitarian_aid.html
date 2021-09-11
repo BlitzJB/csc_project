@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humanitarian Aid</title>
+  <link rel="stylesheet" href="../static/beds.css">
+  <link rel="stylesheet" href="../static/posts.css">
+</head>
+<body style="color: white; font-family: sans-serif">
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">TNCAH</a></li>
+    <li class="nav__links"><a href="{{ url_for('vaccines') }}">Vaccine Information</a></li>
+    <li class="nav__links"><a href="{{ url_for('beds') }}">Beds Availaility Information</a></li>
+  </ul>
+  <div class="container">
+    <ul class="aside">
+      <li><b>Posts:</b></li>
+      {% for post in pdata %}
+        <li>{{post[1]}}</li>
+      {% endfor %}
+    </ul>
+    <div class="main_content">
+      {% for post in pdata %}
+        <div class="post">
+          <div class="post__title">
+            {{ post[1] }}  
+          </div>
+          <div class="post__author">
+            By {{ post[0] }}
+          </div>
+          <div class="post__content">
+            {{ post[2] }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

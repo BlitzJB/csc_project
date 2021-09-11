@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/doctors.css">
+</head>
+<body>
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">TNCAH</a></li>
+    <li class="nav__links"><a href="{{ url_for('beds') }}">Beds Availability Information</a></li>
+    <li class="nav__links"><a href="{{ url_for('humanitarian_aid') }}">Humanitarian Aid</a></li>
+  </ul>
+  <div class="pays_container">
+    <div class="doc">
+      <div class="doc__name">{{ dname }}</div>
+      <div class="doc__qualif">You need to pay a fees of Rs 50 to get a consultation</div>
+      <input type="text" placeholder="Card Number" class="doc__input">
+      <input type="text" placeholder="Security Code" class="doc__input">
+      <button class="btn__consult" id="pay_button">Consult</button>
+      <a href="/get_doctor_link?dname={{ dname | quote_plus }}"><button id="get_link">Get Link</button></a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const get_link = document.getElementById('get_link');
+      get_link.style.display = "none"
+      const pay_button = document.getElementById('pay_button');
+      pay_button.addEventListener('click', (event) => {
+        alert('Payment was successful. you can now get your link');
+        pay_button.style.display = "none"
+        get_link.style.display = "block"
+      })
+    })
+  </script>
+</body>
+</html>

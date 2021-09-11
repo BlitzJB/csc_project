@@ -1,0 +1,33 @@
+:root {
+  --gradient-1: rgb(10, 0, 54);
+  --gradient-2: rgb(27, 0, 107);
+  --grad-1: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  --grad-2: linear-gradient(to right, var(--gradient-2), var(--gradient-1));
+  --grad-3: linear-gradient(to right, rgb(27, 0, 107), rgb(15, 0, 80));
+  --grad-4: linear-gradient(to right, rgb(15, 0, 80), rgb(27, 0, 107));
+  --light-gray: rgba(253, 253, 253, 0.6);
+  --text: rgb(219, 219, 219);
+}
+
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('Sansation_Light.ttf');
+}
+
+.addpost__container {
+  padding: 30px;
+  border: 2px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  width:fit-content
+}
+
+.container {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.container > form {
+  margin-right: 30px;
+}
+

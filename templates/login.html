@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | TNCAH</title>
+  <link rel="stylesheet" href="../static/login.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="login__container">
+      <span class="login__toplabel">User Login</span>
+      <form action="/login" class="login__form" method="POST" id="login_form">
+        <label for="email_field" class="login__label"><b>Email ID</b></label>  
+        <input type="text" placeholder="Email" name="email" class="login__field" required>
+        <label for="password_field" class="login__label"><b>Password</b></label>
+        <input type="password" placeholder="Password" name="password" class="login__field" required>
+        <span id="login_validation_message" class="validation_message"></span>
+        <div class="login__btncontainer">
+          <button type="submit" class="login__btn">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

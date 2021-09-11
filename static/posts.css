@@ -1,0 +1,81 @@
+:root {
+  --gradient-1: rgb(10, 0, 54);
+  --gradient-2: rgb(27, 0, 107);
+  --grad-1: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+  --grad-2: linear-gradient(to right, var(--gradient-2), var(--gradient-1));
+  --grad-3: linear-gradient(to right, rgb(27, 0, 107), rgb(15, 0, 80));
+  --grad-4: linear-gradient(to right, rgb(15, 0, 80), rgb(27, 0, 107));
+  --light-gray: rgba(253, 253, 253, 0.6);
+  --text: rgb(219, 219, 219);
+  --light-blue: rgb(181, 181, 255);
+}
+
+.aside  {
+  list-style:none;
+  margin: 0; padding: 0;
+
+  border: 2px solid var(--light-blue);
+  color: var(--light-blue);
+  padding: 20px;
+  font-size: 20px;
+  height: fit-content;
+}
+
+.aside * {
+  margin-bottom: 20px  
+}
+
+.aside > li:last-child {
+  margin-bottom:0px
+}
+
+.aside > li:first-child {
+  color:white
+}
+
+.post {
+  border: 2px solid var(--light-blue);
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.post * {
+  margin-bottom: 20px;
+}
+
+.post__title {
+  font-size: 30px;
+  color: var(--light-blue);
+}
+
+.post__author {
+  font-size: 18px;
+  color: var(--light-gray);
+  font-style: italic;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction:row;
+    padding: 100px
+  }
+
+  .aside {
+    width: 250px;
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction:column;
+    padding: 15px;
+    position: relative;
+  }
+
+  .aside {
+    margin-bottom: 30px ;
+  }
+}

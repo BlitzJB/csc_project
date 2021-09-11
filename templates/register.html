@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | TNCAH</title>
+  <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login__container" id="login_cont">
+      <span class="login__toplabel">Register</span>
+      <form id="register_form" action="/register" class="login__form" method="POST">
+        <label for="name_field" class="login__label"><b>Full Name</b></label>  
+        <input type="text" placeholder="Full Name" name="name" class="login__field" required>
+        <label for="email_field" class="login__label"><b>Email ID</b></label>
+        <input id="email" type="text" placeholder="Email" name="email" class="login__field" required>
+        <span id="email_validation_message" class="validation_message"></span>  
+        <label for="password_field" class="login__label"><b>Password</b></label>
+        <input id="password" type="password" placeholder="Password" name="password" class="login__field" required>
+        <label for="confpassword_field" class="login__label"><b>Confirm Password</b></label>
+        <input id="confirm_password" type="password" placeholder="Retype Password" name="confpassword_field" class="login__field" required>
+        <span id="pass_validation_message" class="validation_message"></span>
+        <div class="login__btncontainer">
+          <button type="submit" class="login__btn" id="submit">Register</button>
+          <a href="/"><button type="button" class="cancel__btn">Cancel</button></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

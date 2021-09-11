@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Pannel</title>
+  <script src="../static/beds.js"></script>
+  <link rel="stylesheet" href="../static/login.css">
+  <link rel="stylesheet" href="../static/beds.css">
+  <link rel="stylesheet" href="../static/admin.css">
+  <link rel="stylesheet" href="../static/posts.css">
+</head>
+<body style="color: white; font-family: sans-serif">
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">TNCAH</a></li>
+    <li class="nav__links"><a href="{{ url_for('vaccines') }}">Vaccine Information</a></li>
+    <li class="nav__links"><a href="{{ url_for('humanitarian_aid') }}">Humanitarian Aid</a></li>
+  </ul>
+  <div class="container">
+    <form action="/admin" class="addpost__container" method="POST">
+      <label for="addpost" class="login__label">Add a post</label>
+      <input name="title" type="text" placeholder="Title" class="login__field" required>
+      <input name="content" type="text" placeholder="Content" class="login__field" required>
+      <button type="submit" style="margin-top: 15px;font-size: 1.05rem;width: 100px;height: 40px;background-color: transparent;  border: none;border: 1px solid rgba(47, 255, 99, .65);color: rgba(47, 255, 99, .65);transition: 200ms; width: fit-content; cursor: pointer">Create Post</button>
+    </form>
+    </ul>
+    <div class="main_content">
+      {% for post in pdata %}
+        <div class="post">
+          <div class="post__title">
+            {{ post[1] }}  
+          </div>
+          <div class="post__author">
+            By {{ post[0] }}
+          </div>
+          <div class="post__content">
+            {{ post[2] }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</body>
+</html>

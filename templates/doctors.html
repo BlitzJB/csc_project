@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/doctors.css">
+</head>
+<body>
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">TNCAH</a></li>
+    <li class="nav__links"><a href="{{ url_for('beds') }}">Beds Availability Information</a></li>
+    <li class="nav__links"><a href="{{ url_for('humanitarian_aid') }}">Humanitarian Aid</a></li>
+  </ul>
+  <div class="docs_container">
+    {% for doc in ddata %}
+      <div class="doc">
+        <div class="doc__name">{{ doc[0] }}</div>
+        <div class="doc__qualif">Qualification: {{ doc[1] }}</div>
+        <div class="doc__timings">Timings: {{ doc[2] }}</div>
+        <a href="/pay_doctors?dname={{ doc[0] | quote_plus }}"><button class="btn__consult">Consult</button></a>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

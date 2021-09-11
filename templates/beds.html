@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beds Information</title>
+  <script src="../static/beds.js"></script>
+  <link rel="stylesheet" href="../static/beds.css">
+</head>
+<body style="color: white; font-family: sans-serif">
+  <ul class="nav">
+    <li class="nav__links"><a href="{{ url_for('index') }}">TNCAH</a></li>
+    <li class="nav__links"><a href="{{ url_for('vaccines') }}">Vaccine Information</a></li>
+    <li class="nav__links"><a href="{{ url_for('humanitarian_aid') }}">Humanitarian Aid</a></li>
+  </ul>
+  <div class="search_container">
+    <div class="tooltip" id="tooltip">
+      Select your district and hit "Search" to display available hospital beds
+    </div>
+    <div class="search_container_inner">
+      <form id="dist_select_form">
+        <select id="dist_select" name="dist_select">
+          <option value="None">Loading...</option>
+        </select>
+        <button type="submit" id="dist_search" style="cursor: pointer;">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="card__container" id="card__container">
+    <!-- this is where hospital info cards get inserted -->
+  </div>
+</body>
+</html>
